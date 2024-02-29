@@ -1,6 +1,6 @@
 #!/bin/bash
 #vars
-#IP=$(ip a |egrep -v inet6 | egrep inet | awk '{print $2}' |egrep [0-9].[0-9].[0-9].[0-9] |egrep -v 127 |awk '{print $1}')
+
 IP=$(hostname -I)
 RELEASE=$(cat /etc/os-release |egrep  PRETTY_NAME | awk -F= '{print $2}')
 KERNEL=$(uname -a | cut -d " " -f 3)
@@ -32,5 +32,5 @@ echo -e "\e[1;38;5;15m - Used SWAP ............................: $USED_SWAP  "
 echo -e "\e[1;38;5;15m - Free Memory ..........................: $FREE_MEM  "
 echo -e "\e[1;38;5;15m - Free SWAP ............................: $FREE_SWAP  "
 echo -e "\e[0m=============================================================================================================================="
-echo -e "\e[1;38;5;15m - Last three logins were ...............: \n
+echo -e "\e[1;38;5;15m - Last login was ...............: \n
 $LAST"
